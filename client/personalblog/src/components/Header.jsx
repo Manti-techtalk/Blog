@@ -1,5 +1,6 @@
 import React from 'react'
 import image from '../assets/pic.png'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
@@ -12,8 +13,8 @@ function Header() {
             </div>
             <div className="col-6">
                 <ul className='nav  justify-content-end'>
-                    <li className='m-1'>Home</li>
-                    <li className='m-1'>Artiles</li>
+                    <li className='m-1'><Link to='/'>Home</Link></li>
+                    <li className='m-1'><Link to='/articles'>Artiles</Link></li>
                     <li className='m-1'>About</li>
                     <li className='m-1'>Projects</li>
                 </ul>
