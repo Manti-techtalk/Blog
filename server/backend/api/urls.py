@@ -1,14 +1,13 @@
-from django.urls import path,include
-from . import views
-from .views import handle_request, article_detail  # Import your views
+from django.urls import path
+from .views import api_home, handle_request, article_detail  # Import your views
 
 urlpatterns = [
-    # URL for handling GET and POST requests (list and create articles)
+    # Homepage for testing
+    path('', api_home, name='api-home'),
+
+    # Handle GET and POST requests for articles
     path('articles/', handle_request, name='handle-request'),
 
-    # URL for handling GET, PUT, and DELETE requests (retrieve, update, delete a specific article)
+    # Handle GET, PUT, and DELETE requests for a specific article
     path('articles/<int:pk>/', article_detail, name='article-detail'),
-]
-urlpatterns = [
-    path('',views.api_home),
 ]
